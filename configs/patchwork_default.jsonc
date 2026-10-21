@@ -1,0 +1,25 @@
+{
+  "base_config": "base.jsonc",
+
+  "run_name": "patchwork-clean-pilot",
+  "method_name": "patchwork",
+  "payload_length": 40,
+  "output_dir": "${paths.outputs_root}/${run_name}",
+
+  "dataset": {
+    "name": "VCTK",
+    "modality": "audio",
+    "root": "${paths.datasets.vctk}",
+    "split": "train",
+    "subset_count": 10,
+    "subset_seed": 1453,
+    "manifest_path": "${paths.manifests_root}/vctk-patchwork-pilot.jsonl"
+  },
+
+  "method_params": {
+    "method": "patchwork",
+    "device": "cpu",
+    "sample_rate": 16000,
+    "batch_truncate_seconds": 3.0
+  }
+}

@@ -1,0 +1,4 @@
+tests/ export-ignore
+.pytest_cache/ export-ignore
+__pycache__/ export-ignore
+*.py[cod] export-ignore

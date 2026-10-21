@@ -1,0 +1,47 @@
+{
+  // Shared defaults for Identity Capacity pilot runs.
+  // Method configs inherit this file. Local paths can be supplied through IC_* env vars or configs/paths.jsonc.
+  "base_config": "paths.example.jsonc",
+
+  "repo_root": "${paths.repo_root}",
+  "alpha": 0.05,
+  "message_seed": 1453,
+  "message_mode": "uid_trial",
+  "trials_per_sample": 1,
+  // Optional top-level override. When omitted, AudioSeal/VoiceMark/HiDDeN use 4 and TrustMark uses 1.
+  // "trial_batch_size": 4,
+  "persist_trial_artifacts": false,
+  "payload_filler": "zeros",
+  // Candidate code set: bch, uncoded_bch, rm, or uncoded_rm.
+  "code_family": "bch",
+  "min_k": 1,
+  "max_k": null,
+  "max_candidates": 10000,
+  "candidate_pool_size": 10000,
+  "search_strategy": "brute_force",
+  // Capacity evaluation target: L2_T+L3, L2_M+L3, or L2_T+L2_M.
+  "evaluation_target": "L2_T+L3",
+  "evaluation_mode": "empirical",
+  "raw_baseline_trial_multiplier": 1,
+
+  "workers": {
+    "count": 8,
+    "devices": []
+  },
+
+  "channel": {
+    "name": "clean",
+    "params": {},
+    "seed": 11
+  },
+
+  "runtime": {
+    "core_env": "icore",
+    "python": "python",
+    "notes": "Core only needs numpy, scipy, pillow, and json5. Watermark models run in their own wm-* conda envs."
+  },
+
+  "method_params": {
+    "device": "cpu"
+  }
+}

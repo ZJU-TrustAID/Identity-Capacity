@@ -1,0 +1,33 @@
+{
+  "base_config": "base.jsonc",
+
+  "run_name": "echo-smoke",
+  "method_name": "echo",
+  "payload_length": 8,
+  "output_dir": "${paths.outputs_root}/${run_name}",
+
+  "dataset": {
+    "name": "example",
+    "modality": "image",
+    "root": "examples",
+    "split": "smoke",
+    "subset_count": 1,
+    "subset_seed": 1453,
+    "manifest_path": "${paths.manifests_root}/echo-smoke.jsonl"
+  },
+
+  "workers": {
+    "count": 1,
+    "devices": []
+  },
+
+  "max_candidates": 1,
+  "candidate_pool_size": 1,
+  "trials_per_sample": 1,
+  "trial_batch_size": 1,
+  "code_family": "uncoded_bch",
+  "min_k": 1,
+  "max_k": 4,
+
+  "method_params": {}
+}

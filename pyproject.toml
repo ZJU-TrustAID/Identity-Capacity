@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ic-estimation"
+version = "0.1.0"
+description = "IC Estimation command-line toolkit for multi-bit watermark methods"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "scipy",
+  "pillow",
+  "json5",
+]
+
+[project.scripts]
+ic-estimate = "ic_estimation.cli:main"
+
+[tool.setuptools]
+packages = ["ic_estimation"]

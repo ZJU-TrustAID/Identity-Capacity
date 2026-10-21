@@ -1,0 +1,31 @@
+{
+  // Shared path defaults. Override these with IC_* environment variables for a local machine.
+  "paths": {
+    "repo_root": "${env:IC_REPO_ROOT:-.}",
+    "project_root": "${paths.repo_root}",
+    "outputs_root": "${env:IC_OUTPUTS_ROOT:-runs}",
+    "manifests_root": "${env:IC_MANIFESTS_ROOT:-manifests}",
+
+    "datasets": {
+      "vctk": "${env:IC_VCTK_ROOT:-resources/datasets/VCTK}",
+      "coco_val2017": "${env:IC_COCO_VAL_ROOT:-resources/datasets/COCO/val2017}"
+    }
+  },
+
+  "runtime": {
+    "env": {
+      "IC_AUDIOSEAL_CONDA_ENV": "${env:IC_AUDIOSEAL_CONDA_ENV:-wm-audioseal}",
+      "IC_VOICEMARK_CONDA_ENV": "${env:IC_VOICEMARK_CONDA_ENV:-wm-voicemark}",
+      "IC_HIDDEN_CONDA_ENV": "${env:IC_HIDDEN_CONDA_ENV:-wm-hidden}",
+      "IC_TRUSTMARK_CONDA_ENV": "${env:IC_TRUSTMARK_CONDA_ENV:-wm-trustmark}",
+      "IC_DWT_DCT_CONDA_ENV": "${env:IC_DWT_DCT_CONDA_ENV:-wm-hidden}",
+      "IC_SVD_CHANG_CONDA_ENV": "${env:IC_SVD_CHANG_CONDA_ENV:-wm-hidden}",
+      "IC_PATCHWORK_CONDA_ENV": "${env:IC_PATCHWORK_CONDA_ENV:-wm-audioseal}",
+      "IC_FSVC_CONDA_ENV": "${env:IC_FSVC_CONDA_ENV:-wm-audioseal}",
+      "HF_HUB_DISABLE_PROGRESS_BARS": "1",
+      "HF_HUB_OFFLINE": "${env:HF_HUB_OFFLINE:-1}",
+      "http_proxy": "${env:http_proxy:-}",
+      "https_proxy": "${env:https_proxy:-}"
+    }
+  }
+}

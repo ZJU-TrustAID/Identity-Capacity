@@ -1,0 +1,19 @@
+name: wm-trustmark
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch=2.1.2
+  - torchvision=0.16.2
+  - cpuonly
+  - pip:
+      - numpy<2
+      - pillow
+      - omegaconf>=2.1
+      - lightning>=2.0
+      - einops>=0.4.0
+      - six>=1.9
+      - torchmetrics
+      - kornia

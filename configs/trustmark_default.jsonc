@@ -1,0 +1,35 @@
+{
+  "base_config": "base.jsonc",
+
+  "run_name": "trustmark-clean-pilot",
+  "method_name": "trustmark",
+  "payload_length": 100,
+  "output_dir": "${paths.outputs_root}/${run_name}",
+
+  "dataset": {
+    "name": "COCO",
+    "modality": "image",
+    "root": "${paths.datasets.coco_val2017}",
+    "split": "val2017",
+    "subset_count": 10,
+    "subset_seed": 1453,
+    "manifest_path": "${paths.manifests_root}/coco-trustmark-pilot.jsonl"
+  },
+
+  "method_params": {
+    "model_type": "Q",
+    "encoding_name": "NONE",
+    "mode": "binary",
+    "wm_strength": 1.0,
+    "wm_merge": "bilinear",
+    "load_remover": false,
+    "load_bbox_detector": false,
+    "detectfirst": false,
+    "rotation": false
+  },
+
+  "notes": {
+    "native_coded_output_only": false,
+    "meaning": "TrustMark is run without its method-native BCH/ECC layer and exposes the raw 100-bit model readout."
+  }
+}
